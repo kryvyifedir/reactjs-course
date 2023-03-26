@@ -1,7 +1,7 @@
 
 import PhonebookEntry from './PhonebookEntry';
 
-const Phonebook = ({ entries }) => {
+const Phonebook = ({ entries, removeFunction }) => {
 
     return (
         <div>
@@ -11,9 +11,12 @@ const Phonebook = ({ entries }) => {
                     <tr>
                         <th>Name</th>
                         <th>Phone</th>
+                        <th></th>
                     </tr>
                 </thead>
-                <tbody>{entries.map(entry => <PhonebookEntry key={entry.id} entry={entry} />)}</tbody>
+                <tbody>{entries.map(entry => 
+                    <PhonebookEntry key={entry.id} entry={entry} onClick={removeFunction}/>)
+                }</tbody>
             </table>
         </div>
     )

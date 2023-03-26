@@ -1,4 +1,4 @@
-const PhonebookEntry = ({entry}) => {
+const PhonebookEntry = ({entry, onClick}) => {
 
     return (
         <tr>
@@ -7,6 +7,9 @@ const PhonebookEntry = ({entry}) => {
             </td>
             <td>
                 {entry.phone}
+            </td>
+            <td>
+                <button onClick={() => onClick(entry.id)}>delete</button>
             </td>
         </tr>
        
