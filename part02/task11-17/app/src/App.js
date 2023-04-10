@@ -83,11 +83,11 @@ const App = () => {
         .catch(showMessage('Unable to update persons number', 'error'));
     } else {
       dataservice.create(newPerson)
-        .then(() => {
-          setPersons(persons.concat(newPerson));
+        .then((res) => {
+          setPersons(persons.concat(res));
           showMessage('New person was created', 'success');
         })
-        .catch(showMessage('Unable to create new Person', 'success'));
+        .catch(showMessage('Unable to create new Person', 'error'));
     }
 
     setNewName('');
